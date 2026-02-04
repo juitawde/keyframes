@@ -1,39 +1,72 @@
 <!DOCTYPE html>
 <html>
 <head>
-<style>
-  body {
-    margin: 0;
-    background: black;
-    height: 100vh;
-    overflow: hidden;
-  }
-
-  .snowfield {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 200%; 
-    background-image: 
-      radial-gradient(circle, white 1px, transparent 1px),
-      radial-gradient(circle, white 1.5px, transparent 1.5px);
-    background-size: 100px 100px, 150px 150px;
-    background-position: 0 0, 40px 60px;
-    animation: rise 5s linear infinite;
-  }
-
-  @keyframes rise {
-    from {
-      transform: translateY(0);
-    }
-    to {
-      transform: translateY(-50%);
-    }
-  }
-</style>
+    <title>Floating Stars Night Sky</title>
+    <link rel="stylesheet" href="style.css">
 </head>
+<style>
+    body {
+    margin: 0;
+    padding: 0;
+    background: #000014;
+    height: 600px; 
+    overflow: hidden;
+}
+
+.night-sky {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.star {
+    position: absolute;
+    bottom: -10px;
+    background: white;
+    border-radius: 50%;
+    animation-name: floatUp;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+.star1 { left: 5%; width: 2px; height: 2px; animation-duration: 4000ms; animation-delay: 0ms; }
+.star2 { left: 20%; width: 3px; height: 3px; animation-duration: 5000ms; animation-delay: 500ms; }
+.star3 { left: 35%; width: 1.5px; height: 1.5px; animation-duration: 6000ms; animation-delay: 1000ms; }
+.star4 { left: 50%; width: 2.5px; height: 2.5px; animation-duration: 4500ms; animation-delay: 200ms; }
+.star5 { left: 60%; width: 2px; height: 2px; animation-duration: 5500ms; animation-delay: 700ms; }
+.star6 { left: 15%; width: 3px; height: 3px; animation-duration: 6000ms; animation-delay: 1200ms; }
+.star7 { left: 70%; width: 1.8px; height: 1.8px; animation-duration: 4800ms; animation-delay: 400ms; }
+.star8 { left: 80%; width: 2.2px; height: 2.2px; animation-duration: 5200ms; animation-delay: 900ms; }
+.star9 { left: 90%; width: 2px; height: 2px; animation-duration: 6000ms; animation-delay: 1500ms; }
+.star10 { left: 40%; width: 1.5px; height: 1.5px; animation-duration: 4500ms; animation-delay: 600ms; }
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 0.8;
+    }
+    50% {
+        transform: translateY(-250px) scale(1.2); 
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-600px) scale(1);
+        opacity: 0;
+    }
+}
+</style>
 <body>
-  <div class="snowfield"></div>
+    <div class="night-sky">
+        <div class="star star1"></div>
+        <div class="star star2"></div>
+        <div class="star star3"></div>
+        <div class="star star4"></div>
+        <div class="star star5"></div>
+        <div class="star star6"></div>
+        <div class="star star7"></div>
+        <div class="star star8"></div>
+        <div class="star star9"></div>
+        <div class="star star10"></div>
+    </div>
 </body>
 </html>
